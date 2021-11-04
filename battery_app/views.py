@@ -3,10 +3,11 @@ import psutil
 
 def index(request):
     battery = psutil.sensors_battery()
-    percent = str(battery.percent)
+    percent = int(battery.percent)
     context = {
         'result': percent
     }
+    print("CCOOOOOOOOOOOWWWWW", type(percent))
     return render(request, 'index.html', context)
 
 # Create your views here.

@@ -16,5 +16,18 @@
     <div id=result-box>
     <h1>{{result}}% of your battery is available.</h1>
     </div>
+    {% if result < 20 %}
+        <div id="red-box">
+            <h3>That is really low!</h3>
+        </div>
+    {% elif result > 20 and result < 40 %}
+        <div id="yellow-box">
+            <h3>That is ok, but not great.</h3>
+        </div>
+    {% else %}
+        <div id="blue-box">
+            <h3>That is pretty good!</h3>
+        </div>
+    {% endif %}
 </body>
 </html>
